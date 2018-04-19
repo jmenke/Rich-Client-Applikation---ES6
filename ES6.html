@@ -166,7 +166,15 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Callbacks: keine Threads in Javascript, stattdessen oftmals extrem verschachtelte Callbacks
 
 ### Lösung mit ES6
-- ein __Promise__ repräsentiert ein Objekt, dessen Wert vielleicht jetzt noch nicht, aber in jedem Fall später zu haben
+- Promise: ein __Promise__ repräsentiert ein Objekt, dessen Wert vielleicht jetzt noch nicht, aber in jedem Fall später zu haben
+- Callback: mit der __then__-Funktion kann ein Callback hinzugefügt werden, wenn die Werte verfügbar sind
+- Promises mit then-Callbacks können verkettet werden
+- Notifikation über alle Promises: __Promise.all()__ bekommt ein Array an Promises und returned ein neues Promise, das aufgelöst wird, wenn all Unter-Promises fertig sind
+- Catch Callback: sobald ein Promise fehlschlägt, kann mit __.catch()__ der Fehler gefangen und behandelt werden
+- eigene Promises: mit Promise-Konstruktor, der die Werte __resolve__ und __reject__ mitbekommt, fertig -> resolve() mit dem finalen Wert, im Fehlerfall -> __reject()__ mit alternativem Wert
+---
+
+# Arrays
 
 ---
 
