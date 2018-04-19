@@ -64,6 +64,23 @@ class: center, middle
 
 ---
 
+#Beispiel 1.1
+
+```javascript
+const y = 5;
+y = 9; //error
+
+function goodCode() {
+    if(foo) {
+        let x = 5;
+    }
+    if(bar) {
+        console.log(x); //error
+    }
+}
+```
+---
+
 # Template Literals (Super Strings)
 
 ### Strings in Javascript
@@ -76,6 +93,29 @@ class: center, middle
 - Anführungszeichen müssen nicht mehr escaped werden
 - Multiline Strings: Zeilenumbrüche im String __direkt möglich__
 - Expression escaping: mit __${}__ und einem validen Javascript-Ausdruck
+
+---
+
+#Beispiel 2.1
+
+```javascript
+var q  = 'foo';
+var qq = "foo";
+
+var bq = `foo`;
+var qq = "Sally sells \"sea shells\"";
+var bq = `Sally sells "sea shells"`;
+
+var qq = "this is a very long"
+  + " piece of text that goes over several lines"
+  + " and would require silly hacks";
+
+var bq = `this is a very long
+    piece of text that goes over several lines
+    and would require silly hacks`;
+
+```
+
 
 ---
 
