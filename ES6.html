@@ -49,7 +49,7 @@ class: center, middle
 
 # 1. Variablendeklaration
 
-### Problem der Variablendeklaration in Javascript
+### Variablendeklaration in Javascript
 
 - Deklaration: keine explizite Typangabe möglich, var kann alles sein
 - Konstanten: keine echten Konstanten möglich (nur über Umwege: setter überschreiben und getter mit festem Wert)
@@ -66,18 +66,32 @@ class: center, middle
 
 # Template Literals (Super Strings)
 
-### Probleme bei Strings in Javascript
+### Strings in Javascript
 
 - Strings in Strings: Anführungszeichen innerhalb eines Strings müssen escaped werden
 - Mehrzeilige Strings: entweder mit \n oder über einzelne Strings mit +
+- Double escaping: wenn Variablen in einen String eingesetzt werden, müssen die Anführungszeichen doppelt escaped werden
 
 ### Lösung mit ES6
 
 - Definition: mit Apostroph `
-- Anführungszeichen innerhalb eines Strings müssen nicht mehr escaped werden
+- Anführungszeichen müssen nicht mehr escaped werden
 - Multiline Strings: Zeilenumbrüche im String direkt möglich
+- Expression escaping: mit ${} und einem validen Javascript-Ausdruck
 
 ---
+
+# Arrow Functions
+
+### Funktionen in Javascript
+
+- lange, aufwändige und komplizierte Funktionsdeklaration
+
+### Lösung mit ES6
+
+- Defintion: mit einem Pfeil => nach dem Teil, der die Funktionsparameter enthält
+- Kürzere Schreibweise: eine Arrow-Funktion kann eine Funktion ohne das Keyword function überschreiben
+- Noch kürzere Schreibweise: wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das return, die Klammern und das Semikolon entfernt werden
 
 # Fazit
 
