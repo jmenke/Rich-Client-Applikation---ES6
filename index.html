@@ -73,6 +73,25 @@ class: center, middle
 
 ---
 
+#Beispiel 1.1
+
+```javascript
+function badCode() {
+    const y = 8;
+	y = 4;//error
+	
+	if(foo) {
+        let x = 5;
+    }
+    if(bar) {
+        console.log(x);//error
+    }
+}
+```
+
+Compiler wird hier zur Laufzeit Fehler finden!
+---
+
 # Template Literals (Super Strings)
 
 ### Strings in Javascript
@@ -85,6 +104,31 @@ class: center, middle
 - Anführungszeichen müssen nicht mehr escaped werden
 - Multiline Strings: Zeilenumbrüche im String __direkt möglich__
 - Expression escaping: mit __${}__ und einem validen Javascript-Ausdruck
+
+---
+
+#Beispiel 2.1
+```javascript
+var q  = 'foo';
+var qq = "foo";
+
+var bq = `foo`;
+
+var qq = "Sally sells \"sea shells\"";
+var bq = `Sally sells "sea shells"`;
+
+var qq = "this is a very long"
+  + " piece of text that goes over several lines"
+  + " and would require silly hacks";
+
+var bq = `this is a very long
+    piece of text that goes over several lines
+    and would require silly hacks`;
+
+var name = "Alice";
+var greeting = `Good morning ${name}`;
+
+```
 
 ---
 
@@ -153,7 +197,7 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Klassen können mit ES6 mit dem Keyword __class__ benannt werden
 - Intuitiver und mehr im OOP-Stil
 
-#Beispiel 5.1
+#Beispiel 4.1
 ```javascript
 class Shape {
     constructor (id, x, y) {
@@ -165,6 +209,27 @@ class Shape {
         this.y = y
     }
 }
+```
+
+Konstruktoren können auch programmiert werden!
+---
+
+#Default-Parameter
+
+Funktionen können nun auch mit default-Parametern initialisiert werden,die benutzt werden, wenn die Parameter nicht angegeben werden.
+
+#Beispiel 5.1
+```javascript
+// ES5
+var func = function(a, b) {
+    b = (b === undefined) ? 2 : b;
+    return a + b;
+}
+// ES6
+let func = (a, b = 2) => {
+    return a + b;
+}
+
 ```
 
 ---
