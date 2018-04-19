@@ -44,6 +44,8 @@ class: center, middle
 
 ## const
 ## let
+## Tamplate Literals
+## Arrow Functions
 
 ---
 
@@ -81,17 +83,23 @@ class: center, middle
 
 ---
 
-# Arrow Functions
+## Arrow Functions
 
-### Funktionen in Javascript
+#### Funktionen in Javascript
 
 - lange, aufwändige und komplizierte Funktionsdeklaration
-
-### Lösung mit ES6
+- this: referenziert immer das Objekt, auf dem die Funktion aufgerufen wurde,
+	Probleme, wenn in einer Funktion ein Event Hanlder für einen Button hinzugefügt wird - this referenziert dann den Button
+	Lösung: self-Pattern, wobei das korrekte this in einer temporären Variable self gespeichert wird oder bind, wobei this an ein spezifisches Objekt gebunden wird
+	
+#### Lösung mit ES6
 
 - Defintion: mit einem Pfeil => nach dem Teil, der die Funktionsparameter enthält
 - Kürzere Schreibweise: eine Arrow-Funktion kann eine Funktion ohne das Keyword function überschreiben
-- Noch kürzere Schreibweise: wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das return, die Klammern und das Semikolon entfernt werden
+- Noch kürzere Schreibweise: wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das return, die Klammern und das Semikolon entfernt werden -> Code ist kürzer und besser lesbar
+- this: in Arrow Functions stammt das this immer aus dem Kontext, in dem die Funktion definiert ist und nicht wo die Funtion benutzt wird
+
+---
 
 # Fazit
 
