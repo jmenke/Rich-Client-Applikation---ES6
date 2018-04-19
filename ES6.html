@@ -213,6 +213,26 @@ class Shape {
 
 ---
 
+#Default-Parameter
+
+Funktionen können nun auch mit default-Parametern initialisiert werden,die benutzt werden, wenn die Parameter nicht angegeben werden.
+
+#Beispiel 6.1
+```javascript
+// ES5
+var func = function(a, b) {
+    b = (b === undefined) ? 2 : b;
+    return a + b;
+}
+// ES6
+let func = (a, b = 2) => {
+    return a + b;
+}
+
+```
+
+---
+
 # Fazit
 
     </textarea>
