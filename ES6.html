@@ -25,36 +25,41 @@ class: center, middle
 
 ---
 
-# Übersicht
+# Gliederung
 
 1. Einleitung
-2. Was ist ES6
-3. Warum ES6
-4. Variablendeklaration
-5. Template Literals
-6. Arrow Functions
-7. Promises
+2. Übersicht
+3. Variablendeklaration
+4. Template Literals
+5. Arrow Functions
+6. Promises
+7. Arrays
 8. Klassen
-
+9. Fazit
 ---
 
 # Was ist ES6?
 
-- EcmaScript6/EcmaScript 2015/ES 2015
-- 
+- ECMAScript6/ECMAScript 2015/ES 2015
+- Skriptsprachenspezifikation
+- Wurde kreiert, um Javascript zu standardisieren
+- 1997 erste Version von ECMA
 
 ---
 
 # Warum ES6?
 
-## const
-## let
-## Tamplate Literals
-## Arrow Functions
+###- const und let
+###- Tamplate Literals
+###- Arrow Functions
+###- Promises
+###- Arrays
+###- Klassen
+###- u.v.m
 
 ---
 
-# 1. Variablendeklaration
+# Variablendeklaration
 
 ### Variablendeklaration in Javascript
 - Deklaration: var kann alles sein
@@ -65,7 +70,6 @@ class: center, middle
 ### Lösung mit ES6
 - __const:__ macht Variablen zu Konstanten, wirft Runtime-Errors zur Laufzeit, Code-Linting-Systeme können diese Fehler zur Kompilierzeit festellen
 - __let:__ mit let kann man auf Variablen nur innerhalb ihres Blockes zugegriffen werden
-- -> __const__ und __let__ ersetzen var, weswegen var nicht mehr benutzt werden muss!
 
 ---
 
@@ -179,16 +183,12 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 
 # Arrays
 
-.remark-container {
-  background-color: red;
-}
-
 ### Lösung mit ES6
 - Funktionen für alle Variablen eines Arrays: __.forEach()__ für jedes Element und __.map()__, das zusätzlich alle Resultate in ein neues Array speichert
 - Funktion zur Transformation anhannd von Kriterien: __.filter()__ mit einer Filterbedingung als Parameter
 - Funktionen zum Finden einzelner Werte: __.find()__ findet den ersten passenden Wert, __.findIndex()__ findet den Index des ersten passenden Wertes, __.some()__ liefert true falls mindestens ein Wert passt
 - Funktionen zum Reduzieren zu einem einzelnen Wert: __.reduce()__
-- Über Eigenschaftn eines Objekts iterieren: mit __Object,key__ kriegt man eine Liste von Eigenschaftennamen und iterieren mit __forEach__
+- Über Eigenschaftn eines Objekts iterieren: mit __Object.key__ kriegt man eine Liste von Eigenschaftennamen und iterieren mit __forEach__
 
 ---
 
@@ -197,7 +197,7 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Klassen können mit ES6 mit dem Keyword __class__ benannt werden
 - Intuitiver und mehr im OOP-Stil
 
-#Beispiel 5.1
+#Beispiel 4.1
 ```javascript
 class Shape {
     constructor (id, x, y) {
@@ -218,7 +218,7 @@ Konstruktoren können auch programmiert werden!
 
 Funktionen können nun auch mit default-Parametern initialisiert werden,die benutzt werden, wenn die Parameter nicht angegeben werden.
 
-#Beispiel 6.1
+#Beispiel 5.1
 ```javascript
 // ES5
 var func = function(a, b) {
@@ -235,6 +235,16 @@ let func = (a, b = 2) => {
 ---
 
 # Fazit
+
+### ES6 bringt viele Neuerungen mit sich, die insbesondere den Code übersichtlicher und lesbarer machen
+aber auch neue Funktionen beisteuern:
+-> __const__ und __let__ ersetzen var, weswegen var nicht mehr benutzt werden muss!
+-> __Strings__ sind einfacher zu nutzen
+-> __Arrow-Funktionen__ können den Code drastisch kürzer machen
+-> __Promises_ anstelle von Threads für zeitaufwendige Aufgaben
+-> Für Arrays viele verschiedene __Funktionen__ zum Iterieren oder Finden von Werten
+-> Klassen für den objektorientierten Programmieransatz
+
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
