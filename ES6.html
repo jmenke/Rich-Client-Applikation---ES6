@@ -53,16 +53,16 @@ class: center, middle
 
 ### Variablendeklaration in Javascript
 
-- Deklaration: keine explizite Typangabe möglich, var kann alles sein
-- Konstanten: keine echten Konstanten möglich (nur über Umwege: setter überschreiben und getter mit festem Wert)
-- Scoping: var-Variablen gelten NICHT für ihren Block sondern für ihre Funktion
+- Deklaration: var kann alles sein
+- Konstanten: __keine echten Konstanten__ möglich (nur über Umwege: setter überschreiben und getter mit festem Wert)
+- Scoping: var-Variablen gelten __NICHT in ihren Block__ sondern in ihrer Funktion
 - Nutzung: Variablen können benutzt werden bevor sie definiert wurden
 
 ### Lösung mit ES6
 
-- const: macht Variablen zu Konstanten, wirft Runtime-Errors zur Laufzeit, Code-Linting-Systeme können diese Fehler zur Kompilierzeit festellen
-- let: mit let kann man auf Variablen nur innerhalb ihres Blockes zugegriffen werden
-- -> const und let ersetzen var, weswegen var nicht mehr benutzt werden muss!
+- __const:__ macht Variablen zu Konstanten, wirft Runtime-Errors zur Laufzeit, Code-Linting-Systeme können diese Fehler zur Kompilierzeit festellen
+- __let:__ mit let kann man auf Variablen nur innerhalb ihres Blockes zugegriffen werden
+- -> __const__ und __let__ ersetzen var, weswegen var nicht mehr benutzt werden muss!
 
 ---
 
@@ -70,16 +70,16 @@ class: center, middle
 
 ### Strings in Javascript
 
-- Strings in Strings: Anführungszeichen innerhalb eines Strings müssen escaped werden
-- Mehrzeilige Strings: entweder mit \n oder über einzelne Strings mit +
-- Double escaping: wenn Variablen in einen String eingesetzt werden, müssen die Anführungszeichen doppelt escaped werden
+- Strings in Strings: Anführungszeichen innerhalb eines Strings müssen __escaped__ werden
+- Mehrzeilige Strings: entweder mit __\n__ oder über einzelne Strings mit __+__
+- Double escaping: wenn Variablen in einen String eingesetzt werden, müssen die Anführungszeichen __doppelt escaped__ werden
 
 ### Lösung mit ES6
 
-- Definition: mit Apostroph `
+- Definition: mit __Apostroph__ `
 - Anführungszeichen müssen nicht mehr escaped werden
 - Multiline Strings: Zeilenumbrüche im String direkt möglich
-- Expression escaping: mit ${} und einem validen Javascript-Ausdruck
+- __Expression escaping:__ mit ${} und einem validen Javascript-Ausdruck
 
 ---
 
@@ -88,16 +88,20 @@ class: center, middle
 #### Funktionen in Javascript
 
 - lange, aufwändige und komplizierte Funktionsdeklaration
-- this: referenziert immer das Objekt, auf dem die Funktion aufgerufen wurde,
+- __this__: referenziert immer das Objekt, auf dem die Funktion aufgerufen wurde,
 	Probleme, wenn in einer Funktion ein Event Hanlder für einen Button hinzugefügt wird - this referenziert dann den Button
 	Lösung: self-Pattern, wobei das korrekte this in einer temporären Variable self gespeichert wird oder bind, wobei this an ein spezifisches Objekt gebunden wird
 	
 #### Lösung mit ES6
 
-- Defintion: mit einem Pfeil => nach dem Teil, der die Funktionsparameter enthält
-- Kürzere Schreibweise: eine Arrow-Funktion kann eine Funktion ohne das Keyword function überschreiben
-- Noch kürzere Schreibweise: wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das return, die Klammern und das Semikolon entfernt werden -> Code ist kürzer und besser lesbar
-- this: in Arrow Functions stammt das this immer aus dem Kontext, in dem die Funktion definiert ist und nicht wo die Funtion benutzt wird
+- __Defintion:__ mit => nach dem Teil, der die Funktionsparameter enthält
+- __Kürzere Schreibweise:__ eine Arrow-Funktion kann eine Funktion ohne das Keyword function überschreiben
+- __Noch kürzere Schreibweise:__ wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das return, die Klammern und das Semikolon entfernt werden -> Code ist kürzer und besser lesbar
+- __this:__ in Arrow Functions stammt das this immer aus dem Kontext, in dem die Funktion definiert ist und nicht wo die Funtion benutzt wird
+
+---
+
+# Promises
 
 ---
 
