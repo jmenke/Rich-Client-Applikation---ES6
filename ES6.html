@@ -49,11 +49,33 @@ class: center, middle
 
 # 1. Variablendeklaration
 
-## Problem der Variablendeklaration in Javascript
+### Problem der Variablendeklaration in Javascript
 
-- Deklaration mit var (var kann alles sein)
-- keine echten Konstanten möglich (nur über Umwege: setter überschreiben und getter mit festem Wert)
-- Scoping:var-Variablen  
+- Deklaration: keine explizite Typangabe möglich, var kann alles sein
+- Konstanten: keine echten Konstanten möglich (nur über Umwege: setter überschreiben und getter mit festem Wert)
+- Scoping: var-Variablen gelten NICHT für ihren Block sondern für ihre Funktion
+- Nutzung: Variablen können benutzt werden bevor sie definiert wurden
+
+### Lösung mit ES6
+
+- const: macht Variablen zu Konstanten, wirft Runtime-Errors zur Laufzeit, Code-Linting-Systeme können diese Fehler zur Kompilierzeit festellen
+- let: mit let kann man auf Variablen nur innerhalb ihres Blockes zugegriffen werden
+- -> const und let ersetzen var, weswegen var nicht mehr benutzt werden muss!
+
+---
+
+# Template Literals (Super Strings)
+
+### Probleme bei Strings in Javascript
+
+- Strings in Strings: Anführungszeichen innerhalb eines Strings müssen escaped werden
+- Mehrzeilige Strings: entweder mit \n oder über einzelne Strings mit +
+
+### Lösung mit ES6
+
+- Definition: mit Apostroph `
+- Anführungszeichen innerhalb eines Strings müssen nicht mehr escaped werden
+- Multiline Strings: Zeilenumbrüche im String direkt möglich
 
 ---
 
