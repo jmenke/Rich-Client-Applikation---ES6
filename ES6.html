@@ -129,7 +129,7 @@ var bq = `this is a very long
 
 - lange, aufwändige und komplizierte Funktionsdeklaration
 - __this__: referenziert immer das Objekt, auf dem die Funktion aufgerufen wurde,
-	Probleme, wenn in einer Funktion ein Event Hanlder für einen Button hinzugefügt wird - this referenziert dann den Button
+	Probleme, wenn in einer Funktion ein Event Handler für einen Button hinzugefügt wird - this referenziert dann den Button
 	Lösung: self-Pattern, wobei das korrekte this in einer temporären Variable self gespeichert wird oder bind, wobei this an ein spezifisches Objekt gebunden wird
 	
 #### Lösung mit ES6
@@ -138,6 +138,25 @@ var bq = `this is a very long
 - Kürzere Schreibweise: eine Arrow-Funktion kann eine Funktion ohne das Keyword function überschreiben
 - Noch kürzere Schreibweise: wenn die Funktion nur einen einzigen Ausdruck enthält, kann auch das __return__, die __Klammern__ und das __Semikolon__ entfernt werden -> Code ist kürzer und besser lesbar
 - this: in Arrow Functions stammt das __this__ immer aus dem Kontext, in dem die Funktion definiert ist und nicht wo die Funtion benutzt wird
+
+---
+
+#Beispiel 3.1
+```javascript
+//regular
+function (x) {
+    return x * 2;
+}
+//arrow style
+(x) => {
+    return x * 2;
+}
+```
+Bei nur einem Ausdruck wie im obigen Beispiel:
+
+```javascript
+(x) => x * 2 //Das Return und Klammern können hier auch wegfallen!
+```
 
 ---
 
