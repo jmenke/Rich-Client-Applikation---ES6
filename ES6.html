@@ -64,23 +64,6 @@ class: center, middle
 
 ---
 
-#Beispiel 1.1
-
-```javascript
-const y = 5;
-y = 9; //error
-
-function goodCode() {
-    if(foo) {
-        let x = 5;
-    }
-    if(bar) {
-        console.log(x); //error
-    }
-}
-```
----
-
 # Template Literals (Super Strings)
 
 ### Strings in Javascript
@@ -93,29 +76,6 @@ function goodCode() {
 - Anführungszeichen müssen nicht mehr escaped werden
 - Multiline Strings: Zeilenumbrüche im String __direkt möglich__
 - Expression escaping: mit __${}__ und einem validen Javascript-Ausdruck
-
----
-
-#Beispiel 2.1
-
-```javascript
-var q  = 'foo';
-var qq = "foo";
-
-var bq = `foo`;
-var qq = "Sally sells \"sea shells\"";
-var bq = `Sally sells "sea shells"`;
-
-var qq = "this is a very long"
-  + " piece of text that goes over several lines"
-  + " and would require silly hacks";
-
-var bq = `this is a very long
-    piece of text that goes over several lines
-    and would require silly hacks`;
-
-```
-
 
 ---
 
@@ -151,10 +111,16 @@ var bq = `this is a very long
 
 # Arrays
 
+.remark-container {
+  background-color: red;
+}
+
 ### Lösung mit ES6
 - Funktionen für alle Variablen eines Arrays: __.forEach()__ für jedes Element und __.map()__, das zusätzlich alle Resultate in ein neues Array speichert
 - Funktion zur Transformation anhannd von Kriterien: __.filter()__ mit einer Filterbedingung als Parameter
 - Funktionen zum Finden einzelner Werte: __.find()__ findet den ersten passenden Wert, __.findIndex()__ findet den Index des ersten passenden Wertes, __.some()__ liefert true falls mindestens ein Wert passt
+- Funktionen zum Reduzieren zu einem einzelnen Wert: __.reduce()__
+- Über Eigenschaftn eines Objekts iterieren: mit __Object,key__ kriegt man eine Liste von Eigenschaftennamen und iterieren mit __forEach__
 
 ---
 
