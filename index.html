@@ -162,7 +162,7 @@ function (x) {
 Bei nur einem Ausdruck wie im obigen Beispiel:
 
 ```javascript
-(x) => x * 2 //Das Return und Klammern können hier auch wegfallen!
+(x) => x * 2 //Das Return und die Klammern können hier auch wegfallen!
 ```
 
 ---
@@ -173,14 +173,31 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Callbacks: keine Threads in Javascript, stattdessen oftmals extrem verschachtelte Callbacks
 
 ### Lösung mit ES6
-- Promise: ein __Promise__ repräsentiert ein Objekt, dessen Wert vielleicht jetzt noch nicht, aber in jedem Fall später zu haben
+- Promise: ein __Promise__ repräsentiert ein Objekt, dessen Wert vielleicht jetzt noch nicht, aber in jedem Fall später vorhanden sein wird
 - Callback: mit der __then__-Funktion kann ein Callback hinzugefügt werden, wenn die Werte verfügbar sind
 - Promises mit then-Callbacks können verkettet werden
 - Notifikation über alle Promises: __Promise.all()__ bekommt ein Array an Promises und returned ein neues Promise, das aufgelöst wird, wenn all Unter-Promises fertig sind
 - Catch Callback: sobald ein Promise fehlschlägt, kann mit __.catch()__ der Fehler gefangen und behandelt werden
-- eigene Promises: mit Promise-Konstruktor, der die Werte __resolve__ und __reject__ mitbekommt, fertig -> resolve() mit dem finalen Wert, im Fehlerfall -> __reject()__ mit alternativem Wert
+- eigene Promises: mit Promise-Konstruktor, der die Werte __resolve__ und __reject__ mitbekommt, fertig -> __resolve()__ mit dem finalen Wert, im Fehlerfall -> __reject()__ mit alternativem Wert
 ---
 
+#Beispiel 4.1
+```javascript
+fs.readFile("file.txt")
+        .then((file) => {
+            return db.fetchNames().then((names)=>{
+                return processFile(file,names)
+            })
+        })
+        .then((outfile)=>{
+            return fs.writeFile('file.txt',outfile);
+        })
+        .then(()=>{
+            console.log("we are done writing the file");
+        });
+
+```
+---
 # Arrays
 
 ### Lösung mit ES6
@@ -188,7 +205,7 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Funktion zur Transformation anhannd von Kriterien: __.filter()__ mit einer Filterbedingung als Parameter
 - Funktionen zum Finden einzelner Werte: __.find()__ findet den ersten passenden Wert, __.findIndex()__ findet den Index des ersten passenden Wertes, __.some()__ liefert true falls mindestens ein Wert passt
 - Funktionen zum Reduzieren zu einem einzelnen Wert: __.reduce()__
-- Über Eigenschaftn eines Objekts iterieren: mit __Object.key__ kriegt man eine Liste von Eigenschaftennamen und iterieren mit __forEach__
+- Über Eigenschaften eines Objekts iterieren: mit __Object.key__ kriegt man eine Liste von Eigenschaftennamen und iterieren mit __forEach__
 
 ---
 
@@ -197,7 +214,7 @@ Bei nur einem Ausdruck wie im obigen Beispiel:
 - Klassen können mit ES6 mit dem Keyword __class__ benannt werden
 - Intuitiver und mehr im OOP-Stil
 
-#Beispiel 4.1
+#Beispiel 5.1
 ```javascript
 class Shape {
     constructor (id, x, y) {
@@ -218,7 +235,7 @@ Konstruktoren können auch programmiert werden!
 
 Funktionen können nun auch mit default-Parametern initialisiert werden,die benutzt werden, wenn die Parameter nicht angegeben werden.
 
-#Beispiel 5.1
+#Beispiel 6.1
 ```javascript
 // ES5
 var func = function(a, b) {
@@ -238,12 +255,13 @@ let func = (a, b = 2) => {
 
 ### ES6 bringt viele Neuerungen mit sich, die insbesondere den Code übersichtlicher und lesbarer machen
 aber auch neue Funktionen beisteuern:
--> __const__ und __let__ ersetzen var, weswegen var nicht mehr benutzt werden muss!
--> __Strings__ sind einfacher zu nutzen
--> __Arrow-Funktionen__ können den Code drastisch kürzer machen
--> __Promises_ anstelle von Threads für zeitaufwendige Aufgaben
--> Für Arrays viele verschiedene __Funktionen__ zum Iterieren oder Finden von Werten
--> Klassen für den objektorientierten Programmieransatz
+- __const__ und __let__ ersetzen var, weswegen var nicht mehr benutzt werden muss!
+- __Strings__ sind einfacher zu nutzen
+- __Arrow-Funktionen__ können den Code drastisch kürzer machen
+- __Promises__ anstelle von Threads für zeitaufwendige Aufgaben
+- Für Arrays viele verschiedene __Funktionen__ zum Iterieren oder Finden von Werten
+- __Klassen__ für den objektorientierten Programmieransatz
+- ...
 
 
     </textarea>
